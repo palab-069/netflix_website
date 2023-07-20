@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix Clone</title>
+    <style>
+
+
+        /* I HAVE ADDED GIFS BUT MAYBE THEY GET DELETED */
+        *{
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+        body{
+            background: #000;
+            color: #fff;
+        }
+        .header{
+            height: 100vh;
+            width: 100%;
+            background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.7)), url('https://cdn.mos.cms.futurecdn.net/rDJegQJaCyGaYysj2g5XWY.jpg');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            position: relative;
+        }
+        .Nlogo{
+            height: 48px;
+            
+        }
+       
+
+        nav{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-left: 120px;
+            padding-right: 150px;
+            padding-top: 20px;
+            
+        }
+
+        nav button{
+            text-decoration: none;
+            border: 0px;
+            background-color: rgb(222, 0, 0);
+            color: #fff;
+            font-size: 14px;
+            margin-right: 10px;
+            border-radius: 3px;
+            padding: 8px 20px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        nav button:hover{
+            background-color: rgb(95, 0, 0);
+            transition: 300ms;
+        }
+        nav select{
+            text-decoration: none;
+            border: 0px;
+            background-color: rgb(222, 0, 0);
+            color: #fff;
+            font-size: 14px;
+            margin-right: 10px;
+            border-radius: 3px;
+            padding: 6px 16px;
+            font-weight: bold;
+            
+        }
+        
+            
+            
+
+        
+        #English{
+            background: transparent;
+            border:2px solid #fff;
+            
+        }
+        .middle{
+            font-family:   monospace;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+           transform: translate(-50%,-50%);
+           text-align: center;
+        }
+        .middle h1{
+            font-size: 50px;
+            margin-bottom: 10px;
+
+        }
+        .middle h3{
+            font-size: 20px;
+           
+           
+        }
+        .middle p{
+            font-size: 18px;
+            margin-top: 25px;
+            margin-bottom: 10px;
+           
+        }
+        .signup{
+            background: transparent;
+            display: flex;
+            width: 500px;
+            margin-top: 20px;
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%);
+            
+        }
+        .signup input{
+            flex: 1;
+            border: 2px solid #fff;
+            color: #fff;
+            font-size: 20px;
+            
+            background: transparent;
+            border-radius: 3px;
+            padding-left: 20px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            
+            
+            
+        }
+        .signup input:hover{
+            font-size: 15px;
+            transition: 1s;
+            padding-bottom: 15px;
+        }
+        .signup button{
+            border: 0px;
+            background-color: rgb(211, 0, 0);
+            color: #fff;
+            font-size: 18px;
+            padding: 15px 20px;
+            cursor: pointer;
+            margin-left: 8px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            border-radius: 4px;
+        }
+        .signup button img{
+            height: 15px;
+        }
+        .signup button:hover{
+            
+            background-color:  rgb(137, 0, 0);
+            transition: linear 100ms;
+        }
+        
+        .line hr{
+            height: 8px;
+            background-color: #2f2f2f;
+            border: 0;
+            margin: 0;
+        }
+
+        /* ------------page2------------- */
+        
+        .tv{
+            height: 300px;
+            margin-left: 350px;
+            
+
+          
+            
+        }
+        
+
+        
+        
+        .full{
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 50px ;
+            margin: 100px 0px;
+        }
+        .text{
+            padding: 50px;
+            margin-left: 20px;
+        }
+        .text h2{
+            font-size: 50px;
+            font-family: Arial, Helvetica, sans-serif;
+            
+        }
+        .text p{
+            font-size: 20px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            margin-top: 20px;
+            
+        }
+
+        .line2{
+            height: 8px;
+            background-color: #2f2f2f;
+            border: 0px;
+        }
+
+        /* ------------------page3------------ */
+
+        .page3{
+            display: flex;
+            align-items: center;
+            margin: 50px;
+        }
+        .page3 img{
+            height: 500px;
+        }
+
+        .p3-text h2{
+            font-size: 50px;
+            font-family:  'Arial Narrow Bold', sans-serif;
+        }
+        .p3-text p{
+            font-size: 20px;
+            margin-top: 10px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        .line3{
+            height: 8px;
+            background-color: #2f2f2f;
+            border: 0px;
+        }
+
+        /* --------------------page4---------------- */
+
+        .page4{
+            display: flex;
+            align-items: center;
+            margin: 150px 100px;
+        }
+        .p4-text{
+            margin-right: 100px;
+        }
+        .p4-text h2{
+            font-size: 50px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        .p4-text p{
+            font-size: 20px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            margin-top: 15px;
+        }
+
+        .line5{
+            height: 8px;
+            border: 0;
+            background-color: #2f2f2f;
+        }
+
+        /* ------------page5---------------- */
+
+        .page5{
+
+           
+            display: flex;
+            align-items: center;
+            margin: 50px 0px;
+       }
+       .page5 img{
+        margin-left: 100px;
+       }
+       .p5-text{
+        margin-left: 10px;
+       }
+       .p5-text h2{
+        font-size: 50px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+       }
+       .p5-text p{
+        font-size: 25px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+       }
+
+       .line6{
+        height: 8px;
+        border: 0;
+        background-color: #2f2f2f;
+       }
+
+       /* ------------page6----------- */
+
+       
+       .headtext{
+        font-size: 50px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-weight: bold;
+        text-align: center;
+        margin-top: 30px;
+        margin-bottom: 20px;
+       }
+       #box{
+            background-color: #2f2f2f;
+            display: flex;
+            margin: 10px 150px;
+            cursor: pointer;
+            padding: 20px;
+            font-size: 25px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            
+       }
+       #box:hover{
+        background-color: #545454;
+        transition: 400ms;
+       }
+
+       .plus{
+        
+        display: flex;
+        position: absolute;
+        right: 200px;
+        font-size: 50px;
+        margin: -20px 0px;
+       }
+
+       .p6-text{
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 25px;
+        text-align: center;
+        margin-top: 50px;
+
+       }
+       .line7{
+        height: 8px;
+        border: 0;
+        background-color: #2f2f2f;
+        margin-top: 150px;
+        
+        
+       }
+
+       /* -------------------last page-------------------- */
+
+       .helpline{
+        display: flex;
+        font-size: 20px;
+        margin-left: 200px;
+        margin-top: 100px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: #b9b9b9;
+       }
+        .helpline div{
+            text-decoration: underline;
+            cursor: pointer;
+            margin-left: 10px;
+            
+        }
+
+        .boxes{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin-left: 200px;
+            margin-top: 50px;
+            margin-right: 500px;
+            color: #b9b9b9;
+            
+        }
+
+        .boxxx{
+            margin: 20px 0px;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+
+        .boxxx1{
+            display: flex;
+            justify-content: space-between;
+        }
+        .boxxx2{
+            display: flex;
+            justify-content: space-between;
+        }
+        .boxxx3{
+            display: flex;
+            justify-content: space-between;
+        }
+        .boxxx4{
+            display: flex;
+            justify-content: space-between;
+        }
+        .boxxx5{
+            display: flex;
+            justify-content: space-between;
+        }
+        .bttn{
+           
+            margin:  30px 200px;
+            
+        }
+        #last-button{
+            background: transparent;
+            color: #fff;
+            font-size: 20px;
+            border-radius: 4px;
+            padding: 5px 10px;
+        }
+        .last-text{
+            font-size: 15px;
+            margin: 20px 200px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="header">
+        <nav>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Logonetflix.png" alt="" class="Nlogo">
+            <div>
+                <select name="" id="English">
+                    <option value="">English</option>
+                    <option value="">Hindi</option>
+                </select>
+                <button>Sign In</button>
+            </div>
+        </nav>
+
+        <div class="middle">
+            <h1>
+                Unlimited movies, TV shows and more</h1>
+                <h3>
+                    Watch anywhere. Cancel anytime.</h3>
+                    <p>Ready to watch? Enter your email to create or restart your membership.</p>
+                    <div class="signup">
+                        <input type="email" placeholder="Email address">
+                        <button>Get started <img src="https://t4.ftcdn.net/jpg/03/55/59/35/360_F_355593573_lnsYbCwwHgV7KexllD6oEBaawtLraM1B.jpg" alt="" ></button>
+                    </div>
+
+        </div>
+    </div>
+
+    <div class="line"><hr></div>
+
+    
+        <div class="full">
+            <div class="text">
+                <h2>Enjoy on your TV</h2>
+                <p>Watch on smart TVs, PlayStation, Xbox, Chromecast, <br>Apple TV, Blu-ray players and more.</p>
+            </div>
+            <img src="https://netflix-images.manikantp.repl.co/Netflix1.gif" alt="" class="tv" >
+        </div>
+
+        <hr class="line2">
+    
+        <div class="page3">
+            <img src="https://netflix-images.manikantp.repl.co/Netflix2.gif" alt="">
+
+            <div class="p3-text">
+                <h2>Download your shows to <br>watch offline</h2>
+                <p>Save your favourites easily and always have <br>something to watch.</p>
+            </div>
+                
+               
+                
+            
+        </div>
+
+        <hr class="line3">
+
+        <div class="page4">
+            <div class="p4-text">
+                <h2>Watch everywhere</h2>
+                <p>Stream unlimited movies and TV shows on your <br> phone, tablet, laptop, and TV.</p>
+            </div>
+            <img src="https://media.tenor.com/QJNoPeq9WmUAAAAC/netflix-intro-netflix.gif" alt="">
+        </div>
+
+        <hr class="line5">
+
+        <div class="page5">
+            <img src="https://occ-0-2219-1007.1.nflxso.net/dnm/api/v6/19OhWN2dO19C9txTON9tvTFtefw/AAAABejKYujIIDQciqmGJJ8BtXkYKKTi5jiqexltvN1YmvXYIfX8B9CYwooUSIzOKneblRFthZAFsYLMgKMyNfeHwk16DmEkpIIcb6A3.png?r=f55" alt="">
+            <div class="p5-text">
+                <h2>Create profiles for kids</h2>
+                <p>Send children on adventures with their favourite <br>characters in a space made just for them—free with <br>your membership.</p>
+            </div>
+        </div>
+        <hr class="line6">
+
+        <div class="page6">
+            <div class="headtext">Frequently Asked Questions</div>
+            <div id="box" class="box1">What is Netflix?<div class="plus">+</div></div>
+            <div id="box" class="box2">How much does Netflix cost?<div class="plus">+</div></div>
+            <div id="box" class="box3">Where can I watch?<div class="plus">+</div></div>
+            <div id="box" class="box4">How do I cancel?<div class="plus">+</div></div>
+            <div id="box" class="box5">What can i watch on Netflix?<div class="plus">+</div></div>
+            <div id="box" class="box6">Is Netflix good for kids?Frequently Asked Questions<div class="plus">+</div></div>
+
+            <div class="p6-text">Ready to watch? Enter your email to create or restart your membership.</div>
+
+            <div class="signup">
+                <input type="email" placeholder="Email address">
+                <button>Get started <img src="https://t4.ftcdn.net/jpg/03/55/59/35/360_F_355593573_lnsYbCwwHgV7KexllD6oEBaawtLraM1B.jpg" alt="" ></button>
+
+            </div>
+        </div>
+        <hr class="line7">
+
+        <div class="lastpage">
+            <div class="helpline">Questions? Call <div>  000-800-919-1694</div></div>
+        </div>
+
+        <div class="boxes">
+           <div class="boxxx1"> <div class="boxxx">FAQ</div>
+            <div class="boxxx">Help Centre</div>
+            <div class="boxxx">Account</div> </div>
+           <div class="boxxx2"> <div class="boxxx">Media Centre</div>
+            <div class="boxxx">Investor Relations</div>
+            <div class="boxxx">Jobs</div> </div>
+           <div class="boxxx3"> <div class="boxxx">Ways to Watch</div>
+            <div class="boxxx">Terms of Use</div>
+            <div class="boxxx">Privacy</div> </div>
+          <div class="boxxx4">  <div class="boxxx">Cookie Preferences</div>
+           <div class="boxxx">Corporate Information</div>
+            <div class="boxxx">Contact Us</div> </div>
+           <div class="boxxx5"> <div class="boxxx">Speed Test</div>
+            <div class="boxxx">Legal Notices</div>
+            <div class="boxxx">Only on Netflix</div></div></div>
+        </div>
+
+        <div class="bttn"><select name="" id="last-button">
+            <option value="">English</option>
+            <option value="">Hindi</option>
+        </select>
+        </div>
+        <div class="last-text">Netflix By Palab</div>
+</body>
+</html>
